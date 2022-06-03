@@ -92,7 +92,7 @@ DATABASES = {
 }
 
 db_from_env = dj_database_url.config(
-    default='postgres://qhljyzpdjabtty:e1ad7351e836fb6d065e69e3d67b5d4ac3742985d4468941d8c37ba7684de250@ec2-3-211-221-185.compute-1.amazonaws.com:5432/dcnva9mhg1njku')
+    default='postgres://kptxuifuowodkg:c7d6f86d4de6cf788d3a9c27b62713b75b314f6c6e7990b3ef720008f3bff1d1@ec2-34-207-12-160.compute-1.amazonaws.com:5432/d4hcuh4l6sj5q4')
 DATABASES['default'] = db_from_env
 
 # Password validation
