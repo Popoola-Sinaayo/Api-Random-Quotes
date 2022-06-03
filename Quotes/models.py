@@ -4,8 +4,8 @@ from django.db import models
 
 
 class Random_Quotes(models.Model):
-    Quote = models.CharField(max_length=100)
-    Author = models.CharField(max_length=100, default='Unknown')
+    Quote = models.CharField(max_length=2000)
+    Author = models.CharField(max_length=1000, default='Unknown')
 
     def __str__(self):
         return f"{self.Quote}"
