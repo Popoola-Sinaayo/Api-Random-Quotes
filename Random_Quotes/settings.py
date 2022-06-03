@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,13 +78,22 @@ WSGI_APPLICATION = 'Random_Quotes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': str(os.path.join(BASE_DIR, 'db.sqlite3')),
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(os.path.join(BASE_DIR, 'db.sqlite3')),
     }
 }
 
+db_from_env = dj_database_url.config(
+    default='postgres://qhljyzpdjabtty:e1ad7351e836fb6d065e69e3d67b5d4ac3742985d4468941d8c37ba7684de250@ec2-3-211-221-185.compute-1.amazonaws.com:5432/dcnva9mhg1njku')
+DATABASES['default'] = db_from_env
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
